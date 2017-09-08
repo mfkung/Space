@@ -32,9 +32,12 @@ class SpaceGameWindow(arcade.Window):
         arcade.start_render()
         self.gold_sprite.draw()
         self.ship_sprite.draw()
+        arcade.draw_text(str(self.world.score),
+                         self.width - 30, self.height - 30,
+                         arcade.color.WHITE, 20)
     def update(self, delta):
         self.world.update(delta)
-        #self.ship_sprite.set_position(self.world.ship.x, self.world.ship.y)
+        self.ship_sprite.set_position(self.world.ship.x, self.world.ship.y)
  
 if __name__ == '__main__':
     window = SpaceGameWindow(SCREEN_WIDTH, SCREEN_HEIGHT)
